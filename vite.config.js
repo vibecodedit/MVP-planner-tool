@@ -8,7 +8,10 @@ export default defineConfig({
     port: 12000,
     allowedHosts: true,
     headers: {
-      'X-Frame-Options': 'ALLOWALL'
+      'X-Frame-Options': 'DENY',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
     }
   },
   preview: {
